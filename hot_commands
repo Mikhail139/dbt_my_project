@@ -1,0 +1,6 @@
+dbt-env/Scripts/activate #  активировать виртуальное окружение
+dbt build --select stg_flights__bookings --log-level debug # построить определенную модель с глубоким логированием
+dbt build --select stg_flights__bookings --log-level debug --full-refresh # построить определенную модель с глубоким логированием и полным обновлением
+clear # очистить терминал
+dbt docs generate # генерация документов моделей
+dbt docs serve # запуск просмотра документации в браузере
