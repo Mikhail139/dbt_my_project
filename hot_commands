@@ -5,3 +5,8 @@ clear # очистить терминал
 dbt docs generate # генерация документов моделей
 dbt docs serve # запуск просмотра документации в браузере
 dbt build --select 'tag:bookings' # собрать модели по тегу
+dbt seed # Запуск загрузки seed в БД
+dbt seed --select city_region # обновление только сида city_region
+dbt run --select city_region+ # обновление всех моделей, зависящих от сида city_region
+dbt build --select city_region # обновление всех моделей, зависящих от сида city_region, вместе с сидом
+dbt seed --full-refresh # полное обновление seed, включая удаленные или добавленные столбцы
