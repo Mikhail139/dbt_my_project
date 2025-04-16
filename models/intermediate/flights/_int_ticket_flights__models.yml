@@ -1,0 +1,34 @@
+models:
+  - name: fct_ticket_flights
+    description: Данные о билете на полет
+    config:
+        contract: {enforced: true}
+    docs:
+      show: true
+      node_color: green
+    meta:
+      owner: "misha14292@gmail.com"
+
+    columns:
+      - name: ticket_no
+        data_type: bpchar(13)
+        constraints:
+          - type: not_null
+      - name: flight_id
+        data_type: int4
+      - name: fare_conditions
+        data_type: varchar(10)
+        constraints:
+          - type: check
+            expression: "fare_conditions in ('Business', 'Comfort', 'Economy')"
+      - name: amount
+        data_type: numeric(10, 2)
+      - name: boarding_pass_exists
+        description: Был ли пассажир на рейсе
+        data_type: bool
+      - name: boarding_no
+        data_type: int4
+      - name: seat_no
+        data_type: varchar(4)
+      - name: load_date
+        data_type: timestamp

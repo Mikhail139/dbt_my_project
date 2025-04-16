@@ -1,33 +1,38 @@
 models:
-  - name: fct_bookings
-    description: Факты бронирования
-    docs:
-      show: true
-      node_color: red
-    latest_version: 1
-    versions:
-      - v: 1
+  - name: fct_flights
+    description: Данные о рейсах
     config:
         contract: {enforced: true}
+    docs:
+      show: true
+      node_color: yellow
     meta:
       owner: "misha14292@gmail.com"
-      contact_tg: sa
-      status: in_dev    
 
     columns:
-      - name: book_ref
-        data_type: bpchar(6)
+      - name: flight_id
+        data_type: int4
         constraints:
           - type: not_null
-      - name: book_date
+      - name: flight_no
+        data_type: bpchar(6)
+      - name: scheduled_departure
         data_type: timestamptz
-      - name: total_amount
-        data_type: numeric(10, 2)
-        constraints:
-        - type: check
-          expression: "total_amount > 0"
-        tests:
-          - not_null
-        meta:
-          owners: finance_team
-        quote: false
+      - name: scheduled_arrival
+        data_type: timestamptz
+      - name: departure_airport
+        data_type: bpchar(3)
+      - name: arrival_airport
+        data_type: bpchar(3)
+      - name: status
+        data_type: varchar(20)
+      - name: load_date
+        data_type: aircraft_code
+      - name: aircraft_code
+        data_type: bpchar(3)
+      - name: actual_departure
+        data_type: timestamptz
+      - name: actual_arrival
+        data_type: timestamptz
+      - name: load_date
+        data_type: timestamp
