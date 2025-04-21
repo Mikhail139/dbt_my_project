@@ -1,0 +1,12 @@
+seeds:
+  - name: staff
+    description: Сотрудники авиакомпаний 
+    config:
+      column_types:
+        id: varchar(50)
+        position: varchar(50)
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique

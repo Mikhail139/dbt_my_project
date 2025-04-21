@@ -1,0 +1,14 @@
+models:
+  - name: stg_flights__seats
+    description: Данные о местах на самолет
+    config:
+        contract: {enforced: true}
+    columns:
+      - name: seat_id
+        data_type: int4
+      - name: aircraft_code
+        data_type: bpchar(10)
+      - name: seat_no
+        data_type: varchar(10)
+      - name: fare_conditions
+        data_type: varchar(10)

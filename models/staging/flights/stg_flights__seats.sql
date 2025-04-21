@@ -4,6 +4,7 @@
     )
 }}
 select
+seat_id,
 aircraft_code,
 seat_no,
 fare_conditions
