@@ -1,6 +1,9 @@
 {{
     config(
         materialized = 'table',
+        meta = {
+            'owner':'misha14292gmail.com'
+        }
     )
 }}
 select

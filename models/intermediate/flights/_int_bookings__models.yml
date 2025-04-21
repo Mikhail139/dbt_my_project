@@ -9,10 +9,7 @@ models:
       - v: 1
     config:
         contract: {enforced: true}
-    meta:
-      owner: "misha14292@gmail.com"
-      contact_tg: sa
-      status: in_dev    
+        meta: {owner: 'yml_file_owner@gmail.com', status: in_dev, my_meta: new} 
 
     columns:
       - name: book_ref

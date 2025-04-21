@@ -10,3 +10,4 @@ dbt seed --select city_region # обновление только сида city_
 dbt run --select city_region+ # обновление всех моделей, зависящих от сида city_region
 dbt build --select city_region # обновление всех моделей, зависящих от сида city_region, вместе с сидом
 dbt seed --full-refresh # полное обновление seed, включая удаленные или добавленные столбцы
+dbt compile --select cancelled_flights_mirniy # скомпилировать модель (для папки analyses run и build не работают) 

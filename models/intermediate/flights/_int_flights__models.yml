@@ -14,6 +14,9 @@ models:
         data_type: int4
         constraints:
           - type: not_null
+        tests:
+          - not_null
+          - unique
       - name: flight_no
         data_type: bpchar(6)
       - name: scheduled_departure
