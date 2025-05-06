@@ -14,6 +14,7 @@ status,
 aircraft_code,
 actual_departure,
 actual_arrival,
-LOCALTIMESTAMP as load_date
+LOCALTIMESTAMP as load_date,
+{{concat_columns(['flight_id', 'flight_no']) }} as flight_info
 from
     {{ ref('stg_flights__flights') }}
